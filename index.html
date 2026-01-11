@@ -7,14 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Zen Progress Bar -->
+    <div class="zen-progress">
+        <div class="zen-progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Focus Mode Toggle -->
+    <button class="focus-toggle" onclick="toggleFocus()">🌙 Dim Lights</button>
+
+    <!-- Soundscape Toggle -->
+    <button class="soundscape-toggle" onclick="toggleSoundscape()">🔇 Soundscape</button>
+
+    <!-- Focus Mode Overlay -->
+    <div class="focus-overlay" id="focusOverlay"></div>
 
     <div class="book-container">
+        <!-- Page 1: Cover -->
         <div class="page active" id="page-1">
             <h1>Calm Steps</h1>
-            <p>A gentle guide to finding your center.</p>
+            <p class="subtitle">A gentle guide to finding your center.</p>
             <button onclick="nextPage(2)">Open Book</button>
         </div>
 
+        <!-- Page 2: Breathe -->
         <div class="page" id="page-2">
             <h2>01. Breathe</h2>
             <div class="breathe-circle"></div>
@@ -25,20 +40,53 @@
             </div>
         </div>
 
+        <!-- Page 3: Release Stress -->
         <div class="page" id="page-3">
-            <h2>02. Grounding</h2>
-            <p>Look around you. Name 5 things you can <strong>see</strong>, 4 you can <strong>touch</strong>, and 3 you can <strong>hear</strong>.</p>
+            <h2>02. Release</h2>
+            <p>Write down what's weighing on you. Then let it go.</p>
+            <textarea class="stress-input" id="stressInput" placeholder="Type your worries here..."></textarea>
+            <button onclick="releaseStress()">🌸 Release</button>
+            <p class="release-success" id="releaseMessage">Your worries are floating away...</p>
             <div class="nav-buttons">
                 <button onclick="nextPage(2)">Back</button>
                 <button onclick="nextPage(4)">Next Step</button>
             </div>
+            <div class="particle-container" id="particleContainer"></div>
         </div>
 
+        <!-- Page 4: Grounding -->
         <div class="page" id="page-4">
-            <h2>03. Acceptance</h2>
-            <p>"This feeling is uncomfortable, but I am safe. It will pass like a cloud in the sky."</p>
+            <h2>03. Grounding</h2>
+            <p style="margin-bottom: 20px;">Click each sense to acknowledge it:</p>
+            <div class="grounding-list">
+                <div class="grounding-item" onclick="checkGrounding(this)">
+                    <strong>👁️ 5 things</strong> I can see
+                </div>
+                <div class="grounding-item" onclick="checkGrounding(this)">
+                    <strong>✋ 4 things</strong> I can touch
+                </div>
+                <div class="grounding-item" onclick="checkGrounding(this)">
+                    <strong>👂 3 things</strong> I can hear
+                </div>
+                <div class="grounding-item" onclick="checkGrounding(this)">
+                    <strong>👃 2 things</strong> I can smell
+                </div>
+                <div class="grounding-item" onclick="checkGrounding(this)">
+                    <strong>👅 1 thing</strong> I can taste
+                </div>
+            </div>
             <div class="nav-buttons">
                 <button onclick="nextPage(3)">Back</button>
+                <button onclick="nextPage(5)">Next Step</button>
+            </div>
+        </div>
+
+        <!-- Page 5: Acceptance -->
+        <div class="page" id="page-5">
+            <h2>04. Acceptance</h2>
+            <p>"This feeling is uncomfortable, but I am safe. It will pass like a cloud in the sky."</p>
+            <div class="nav-buttons">
+                <button onclick="nextPage(4)">Back</button>
                 <button onclick="nextPage(1)">Start Over</button>
             </div>
         </div>
