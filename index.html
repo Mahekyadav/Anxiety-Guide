@@ -3,94 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calm Steps: An Anxiety Guide</title>
+    <title>Mental Wellness Hub | Anxiety & Depression Support</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
 </head>
 <body>
-    <!-- Zen Progress Bar -->
-    <div class="zen-progress">
-        <div class="zen-progress-fill" id="progressFill"></div>
-    </div>
-
-    <!-- Focus Mode Toggle -->
-    <button class="focus-toggle" onclick="toggleFocus()">🌙 Dim Lights</button>
-
-    <!-- Soundscape Toggle -->
-    <button class="soundscape-toggle" onclick="toggleSoundscape()">🔇 Soundscape</button>
-
-    <!-- Focus Mode Overlay -->
-    <div class="focus-overlay" id="focusOverlay"></div>
-
-    <div class="book-container">
-        <!-- Page 1: Cover -->
-        <div class="page active" id="page-1">
-            <h1>Calm Steps</h1>
-            <p class="subtitle">A gentle guide to finding your center.</p>
-            <button onclick="nextPage(2)">Open Book</button>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-heart"></i>
+                <span>Mental Wellness Hub</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#resources" class="nav-link">Resources</a></li>
+                <li><a href="#tools" class="nav-link">Tools</a></li>
+                <li><a href="#community" class="nav-link">Community</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
+    </nav>
 
-        <!-- Page 2: Breathe -->
-        <div class="page" id="page-2">
-            <h2>01. Breathe</h2>
-            <div class="breathe-circle"></div>
-            <p>Inhale for 4 seconds... Hold for 4... Exhale for 8.</p>
-            <div class="nav-buttons">
-                <button onclick="nextPage(1)">Back</button>
-                <button onclick="nextPage(3)">Next Step</button>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">You're Not Alone on This Journey</h1>
+                <p class="hero-subtitle">Find support, tools, and resources to help manage anxiety and depression</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" id="emergencyBtn">
+                        <i class="fas fa-phone-alt"></i> Need Immediate Help?
+                    </button>
+                    <button class="btn-secondary" id="breathingBtn">
+                        <i class="fas fa-wind"></i> Start Breathing Exercise
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-element">
+                    <i class="fas fa-leaf"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Resources -->
+        <section class="search-section">
+            <div class="container">
+                <h2>Find What Helps You</h2>
+                <p class="section-subtitle">Search for resources, techniques, and information tailored to your needs</p>
+                <div class="search-box">
+                    <input type="text" id="resourceSearch" placeholder="Search for coping techniques, therapy types, self-care ideas...">
+                    <button id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="search-tags">
+                    <span class="search-tag" data-tag="meditation">Meditation</span>
+                    <span class="search-tag" data-tag="therapy">Therapy Options</span>
+                    <span class="search-tag" data-tag="self-care">Self-Care</span>
+                    <span class="search-tag" data-tag="sleep">Sleep Help</span>
+                    <span class="search-tag" data-tag="anxiety">Anxiety Tips</span>
+                    <span class="search-tag" data-tag="depression">Depression Support</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools & Features -->
+        <section id="tools" class="tools-section">
+            <div class="container">
+                <h2>Helpful Tools for Better Days</h2>
+                <p class="section-subtitle">Interactive features designed to help you manage difficult moments</p>
+                
+                <div class="tools-grid">
+                    <!-- Mood Tracker -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <h3>Mood Tracker</h3>
+                        <p>Track your daily emotions to identify patterns and triggers</p>
+                        <button class="tool-btn" id="moodTrackerBtn">Track Your Mood</button>
+                    </div>
+                    
+                    <!-- Breathing Exercise -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <h3>Breathing Exercise</h3>
+                        <p>Calm your nervous system with guided breathing techniques</p>
+                        <button class="tool-btn" id="breathingToolBtn">Start Breathing</button>
+                    </div>
+                    
+                    <!-- Gratitude Journal -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Gratitude Journal</h3>
+                        <p>Practice gratitude by noting things you're thankful for</p>
+                        <button class="tool-btn" id="journalBtn">Start Journaling</button>
+                    </div>
+                    
+                    <!-- Emergency Resources -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-life-ring"></i>
+                        </div>
+                        <h3>Emergency Resources</h3>
+                        <p>Immediate help lines and crisis resources when you need them most</p>
+                        <button class="tool-btn" id="emergencyToolBtn">Get Help Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="resources-section">
+            <div class="container">
+                <h2>Helpful Resources</h2>
+                <p class="section-subtitle">Evidence-based information and strategies to support your mental health</p>
+                
+                <div class="resources-grid">
+                    <!-- Resource items will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Breathing Exercise Modal -->
+        <div id="breathingModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Calming Breathing Exercise</h2>
+                <p>Follow the animation and breathe along to calm your nervous system</p>
+                
+                <div class="breathing-container">
+                    <div class="breathing-circle" id="breathingCircle">
+                        <div class="breathing-text">Breathe In</div>
+                    </div>
+                    <div class="breathing-instructions">
+                        <div class="instruction active" id="inhale">
+                            <h3><i class="fas fa-long-arrow-alt-up"></i> Inhale Slowly</h3>
+                            <p>Breathe in through your nose for 4 seconds</p>
+                        </div>
+                        <div class="instruction" id="hold1">
+                            <h3><i class="fas fa-pause"></i> Hold</h3>
+                            <p>Hold your breath for 4 seconds</p>
+                        </div>
+                        <div class="instruction" id="exhale">
+                            <h3><i class="fas fa-long-arrow-alt-down"></i> Exhale Slowly</h3>
+                            <p>Breathe out through your mouth for 6 seconds</p>
+                        </div>
+                        <div class="instruction" id="hold2">
+                            <h3><i class="fas fa-pause"></i> Rest</h3>
+                            <p>Rest for 2 seconds before the next breath</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="breathing-controls">
+                    <button id="startBreathing" class="btn-primary">
+                        <i class="fas fa-play"></i> Start Exercise
+                    </button>
+                    <button id="stopBreathing" class="btn-secondary" disabled>
+                        <i class="fas fa-stop"></i> Stop
+                    </button>
+                    <div class="cycle-counter">
+                        <span>Breaths: <span id="breathCount">0</span></span>
+                    </div>
+                </div>
+                
+                <div class="breathing-tip">
+                    <i class="fas fa-lightbulb"></i>
+                    <p>Try to do this for at least 5-10 cycles when feeling anxious or stressed</p>
+                </div>
             </div>
         </div>
 
-        <!-- Page 3: Release Stress -->
-        <div class="page" id="page-3">
-            <h2>02. Release</h2>
-            <p>Write down what's weighing on you. Then let it go.</p>
-            <textarea class="stress-input" id="stressInput" placeholder="Type your worries here..."></textarea>
-            <button onclick="releaseStress()">🌸 Release</button>
-            <p class="release-success" id="releaseMessage">Your worries are floating away...</p>
-            <div class="nav-buttons">
-                <button onclick="nextPage(2)">Back</button>
-                <button onclick="nextPage(4)">Next Step</button>
+        <!-- Mood Tracker Modal -->
+        <div id="moodModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>How Are You Feeling Today?</h2>
+                <p>Select your current mood to track your emotional patterns over time</p>
+                
+                <div class="mood-options">
+                    <div class="mood-option" data-mood="awful">
+                        <div class="mood-icon">😔</div>
+                        <span>Awful</span>
+                    </div>
+                    <div class="mood-option" data-mood="poor">
+                        <div class="mood-icon">😞</div>
+                        <span>Poor</span>
+                    </div>
+                    <div class="mood-option" data-mood="okay">
+                        <div class="mood-icon">😐</div>
+                        <span>Okay</span>
+                    </div>
+                    <div class="mood-option" data-mood="good">
+                        <div class="mood-icon">🙂</div>
+                        <span>Good</span>
+                    </div>
+                    <div class="mood-option" data-mood="great">
+                        <div class="mood-icon">😄</div>
+                        <span>Great</span>
+                    </div>
+                </div>
+                
+                <div class="mood-journal">
+                    <h3>Optional Notes (What's affecting your mood?)</h3>
+                    <textarea id="moodNotes" placeholder="Write about what's contributing to how you feel today..."></textarea>
+                </div>
+                
+                <button id="saveMood" class="btn-primary">Save Today's Mood</button>
+                
+                <div class="mood-history">
+                    <h3>Your Recent Mood History</h3>
+                    <div class="history-chart" id="moodHistoryChart">
+                        <!-- Mood history bars will be generated here -->
+                    </div>
+                </div>
             </div>
-            <div class="particle-container" id="particleContainer"></div>
         </div>
 
-        <!-- Page 4: Grounding -->
-        <div class="page" id="page-4">
-            <h2>03. Grounding</h2>
-            <p style="margin-bottom: 20px;">Click each sense to acknowledge it:</p>
-            <div class="grounding-list">
-                <div class="grounding-item" onclick="checkGrounding(this)">
-                    <strong>👁️ 5 things</strong> I can see
+        <!-- Emergency Resources Modal -->
+        <div id="emergencyModal" class="modal">
+            <div class="modal-content emergency-modal">
+                <span class="close-modal">&times;</span>
+                <h2><i class="fas fa-life-ring"></i> Immediate Help & Resources</h2>
+                <p class="emergency-subtitle">If you're in crisis or having thoughts of self-harm, please reach out now. You are not alone.</p>
+                
+                <div class="emergency-contacts">
+                    <div class="emergency-card">
+                        <div class="emergency-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>National Suicide Prevention Lifeline</h3>
+                        <p class="emergency-number">988 or 1-800-273-8255</p>
+                        <p>Available 24/7 for free, confidential support</p>
+                        <a href="tel:988" class="emergency-btn">Call Now</a>
+                    </div>
+                    
+                    <div class="emergency-card">
+                        <div class="emergency-icon">
+                            <i class="fas fa-comment-medical"></i>
+                        </div>
+                        <h3>Crisis Text Line</h3>
+                        <p class="emergency-number">Text HOME to 741741</p>
+                        <p>Free, 24/7 crisis counseling via text message</p>
+                        <button class="emergency-btn" id="crisisTextBtn">Text for Help</button>
+                    </div>
+                    
+                    <div class="emergency-card">
+                        <div class="emergency-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>Additional Resources</h3>
+                        <p>Trevor Project (LGBTQ+): 1-866-488-7386</p>
+                        <p>Veterans Crisis Line: 1-800-273-8255, press 1</p>
+                        <p>Disaster Distress Helpline: 1-800-985-5990</p>
+                    </div>
                 </div>
-                <div class="grounding-item" onclick="checkGrounding(this)">
-                    <strong>✋ 4 things</strong> I can touch
+                
+                <div class="safety-plan">
+                    <h3><i class="fas fa-shield-alt"></i> Create a Safety Plan</h3>
+                    <p>If you're feeling unsafe, consider these steps:</p>
+                    <ol>
+                        <li>Remove means of self-harm from your environment</li>
+                        <li>Contact a trusted friend or family member</li>
+                        <li>Go to a public place where you feel safe</li>
+                        <li>Call one of the helplines above</li>
+                        <li>Visit the nearest emergency room</li>
+                    </ol>
                 </div>
-                <div class="grounding-item" onclick="checkGrounding(this)">
-                    <strong>👂 3 things</strong> I can hear
+                
+                <div class="reminder">
+                    <i class="fas fa-heart"></i>
+                    <p>Your life matters. Please reach out for help. You are worthy of support and care.</p>
                 </div>
-                <div class="grounding-item" onclick="checkGrounding(this)">
-                    <strong>👃 2 things</strong> I can smell
-                </div>
-                <div class="grounding-item" onclick="checkGrounding(this)">
-                    <strong>👅 1 thing</strong> I can taste
-                </div>
-            </div>
-            <div class="nav-buttons">
-                <button onclick="nextPage(3)">Back</button>
-                <button onclick="nextPage(5)">Next Step</button>
             </div>
         </div>
+    </main>
 
-        <!-- Page 5: Acceptance -->
-        <div class="page" id="page-5">
-            <h2>04. Acceptance</h2>
-            <p>"This feeling is uncomfortable, but I am safe. It will pass like a cloud in the sky."</p>
-            <div class="nav-buttons">
-                <button onclick="nextPage(4)">Back</button>
-                <button onclick="nextPage(1)">Start Over</button>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mental Wellness Hub</h3>
+                    <p>A safe space for those dealing with anxiety and depression. Find resources, tools, and support to help you on your journey.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#tools">Tools</a></li>
+                        <li><a href="#community">Community</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Disclaimer</h3>
+                    <p>This site offers supportive resources but is not a substitute for professional medical advice. If you're in crisis, please contact a helpline or healthcare provider.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Mental Wellness Hub. Created with care for those facing anxiety and depression.</p>
             </div>
         </div>
-    </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
