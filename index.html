@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calm Steps: An Anxiety Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="book-container">
+        <div class="page active" id="page-1">
+            <h1>Calm Steps</h1>
+            <p>A gentle guide to finding your center.</p>
+            <button onclick="nextPage(2)">Open Book</button>
+        </div>
+
+        <div class="page" id="page-2">
+            <h2>01. Breathe</h2>
+            <div class="breathe-circle"></div>
+            <p>Inhale for 4 seconds... Hold for 4... Exhale for 8.</p>
+            <div class="nav-buttons">
+                <button onclick="nextPage(1)">Back</button>
+                <button onclick="nextPage(3)">Next Step</button>
+            </div>
+        </div>
+
+        <div class="page" id="page-3">
+            <h2>02. Grounding</h2>
+            <p>Look around you. Name 5 things you can <strong>see</strong>, 4 you can <strong>touch</strong>, and 3 you can <strong>hear</strong>.</p>
+            <div class="nav-buttons">
+                <button onclick="nextPage(2)">Back</button>
+                <button onclick="nextPage(4)">Next Step</button>
+            </div>
+        </div>
+
+        <div class="page" id="page-4">
+            <h2>03. Acceptance</h2>
+            <p>"This feeling is uncomfortable, but I am safe. It will pass like a cloud in the sky."</p>
+            <div class="nav-buttons">
+                <button onclick="nextPage(3)">Back</button>
+                <button onclick="nextPage(1)">Start Over</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

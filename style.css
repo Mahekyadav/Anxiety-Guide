@@ -1,0 +1,72 @@
+body {
+    background-color: #e8ece9; /* Light Sage */
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.book-container {
+    width: 350px;
+    height: 500px;
+    background: #fdfbf7; /* Paper color */
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    border-radius: 5px;
+    padding: 40px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.page {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+    display: none; /* Hide all pages by default */
+    flex-direction: column;
+    justify-content: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.page.active {
+    display: flex; /* Show only the active page */
+    opacity: 1;
+}
+
+h1 { font-size: 2.5rem; color: #5a7d5a; }
+h2 { color: #5a7d5a; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+
+p { line-height: 1.6; font-size: 1.1rem; }
+
+button {
+    background: #5a7d5a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: transform 0.2s;
+}
+
+button:hover { transform: scale(1.05); }
+
+/* Animated Breathing Circle */
+.breathe-circle {
+    width: 60px; height: 60px;
+    background: rgba(90, 125, 90, 0.3);
+    border-radius: 50%;
+    margin: 20px auto;
+    animation: breathe 12s infinite ease-in-out;
+}
+
+@keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    33% { transform: scale(2.5); } /* Inhale */
+    66% { transform: scale(2.5); } /* Hold */
+}
