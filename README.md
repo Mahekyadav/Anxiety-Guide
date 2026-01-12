@@ -1,1 +1,2 @@
-This website helps people deal with anxiety
+This website helps people deal with anxiety.
+It showcases steps to release stress
