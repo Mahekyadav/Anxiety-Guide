@@ -1,2 +1,3 @@
- - This website helps people deal with anxiety.
- - It showcases steps to release stress
+# Anxiety Guide
+- This website helps people deal with anxiety.
+- It showcases steps to release stress
